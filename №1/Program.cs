@@ -7,8 +7,8 @@ Console.WriteLine("Есть секретное слово, узнаешь его
 Console.WriteLine("Могу дать подсказку, это используеться в промышленном альпинизме ");
 string password = "rig";
 int count = 1;
-int final = 3;
-while (count <= final)
+
+while (count <= 3)
 {
     Console.WriteLine("Попытка №" + count +":");
     string attempt = Console.ReadLine();
@@ -24,5 +24,5 @@ while (count <= final)
     count++;   
     
 }
-if (count > final) Console.WriteLine("Увы вам никогда не узнать секретное слово!))");
+if (count > 3) Console.WriteLine("Увы вам никогда не узнать секретное слово!))");
 
