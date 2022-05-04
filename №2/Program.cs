@@ -6,7 +6,7 @@ for (; ; )
 {
     i++;
     Console.WriteLine(i);
-    string exitWord = Console.ReadLine();
+    string? exitWord = Console.ReadLine();
     string word = "exit";
     if (exitWord == word)
     {

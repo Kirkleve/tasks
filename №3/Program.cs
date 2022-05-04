@@ -14,14 +14,14 @@ string help = "help";
 string create = "create login";
 string password = "create password";
 string initialization = "init";
-string log = String.Empty;
-string pass = String.Empty;
+string? log = String.Empty;
+string? pass = String.Empty;
 Console.WriteLine("Введите команду (команда " + help + " выведет на экран список возможных команд):");
 int i = 0;
 for (; ; )
 {
     i++;
-    string command = Console.ReadLine();
+    string? command = Console.ReadLine();
     if (command == help)
     {
         Console.WriteLine("Список команд: ");

@@ -11,7 +11,7 @@ int count = 1;
 while (count <= 3)
 {
     Console.WriteLine("Попытка №" + count +":");
-    string attempt = Console.ReadLine();
+    string? attempt = Console.ReadLine();
     if (attempt == password)
     {
         Console.WriteLine("Поздравляю и секретное слово 'petzl'");

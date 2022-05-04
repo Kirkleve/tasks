@@ -5,8 +5,8 @@
 */
 Console.WriteLine("Конвертер валют");
 int i = 0;
-string exit = "exit";
-string curr = String.Empty;
+string? exit = "exit";
+string? curr = String.Empty;
 
 
 for ( ; ; )
@@ -63,7 +63,7 @@ for ( ; ; )
 
     
 
-void WroneCommand (string unCorrect)
+void WroneCommand (string? unCorrect)
 {
     while (unCorrect != eur && unCorrect != usd && unCorrect != gbp && unCorrect != rub)
     {
@@ -75,7 +75,7 @@ void WroneCommand (string unCorrect)
     } 
 }
 
-void AllarmHelp (string commHelp)
+void AllarmHelp (string? commHelp)
 {
     if ( commHelp == "help")
     {
