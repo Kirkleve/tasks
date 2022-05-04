@@ -6,13 +6,13 @@
 Console.WriteLine("Конвертер валют");
 int i = 0;
 string? exit = "exit";
-string? curr = String.Empty;
+var curr = String.Empty;
 
 
 for ( ; ; )
 {
     i++;
-    Console.WriteLine("В какой валюте у вас сбережения");
+    Console.Write("В какой валюте у вас сбережения: ");
     curr = Console.ReadLine();
     string rub = "rub";
     string usd = "usd";
@@ -23,7 +23,7 @@ for ( ; ; )
     WroneCommand(curr);
     AllarmHelp (curr);
 
-    Console.WriteLine("Какой ваш баланс?");
+    Console.Write("Какой ваш баланс: ");
     double balance = Convert.ToDouble(Console.ReadLine());
     if (curr == exit) break;
     if (curr == "usd")
@@ -40,7 +40,7 @@ for ( ; ; )
     }
     
     
-    Console.WriteLine("В какую валюту вы хотите конвертировать?");
+    Console.Write("В какую валюту вы хотите конвертировать: ");
     curr = Console.ReadLine();
     if (curr == exit) break;
     WroneCommand(curr);
@@ -58,8 +58,9 @@ for ( ; ; )
     {
         balance = balance * 0.0113;
     }
+    Console.ForegroundColor = ConsoleColor.Green;
     Console.WriteLine($"У вас будет " + balance + " " + curr);
-    Console.WriteLine();
+    Console.ResetColor();
 
     
 
