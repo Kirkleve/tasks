@@ -24,19 +24,25 @@ for ( ; ; )
     AllarmHelp (curr);
 
     Console.Write("Какой ваш баланс: ");
-    double balance = Convert.ToDouble(Console.ReadLine());
-    if (curr == exit) break;
+    string? balance = Console.ReadLine();
+    
+    if (balance == exit) break;
+    
+    AllarmHelp (balance);
+    
+    double balanceConv = Convert.ToDouble(balance);
+    
     if (curr == "usd")
     {
-        balance = balance * 71.02;
+        balanceConv = balanceConv * 71.02;
     }
     if (curr == "eur")
     {    
-        balance = balance * 74.56;
+        balanceConv = balanceConv * 74.56;
     }
     if (curr == "gbp")
     {
-        balance = balance * 88.35;
+        balanceConv = balanceConv * 88.35;
     }
     
     
@@ -48,21 +54,22 @@ for ( ; ; )
 
     if (curr == usd)
     {
-        balance = balance * 0.0141;
+        balanceConv = balanceConv * 0.0141;
     }
     if (curr == eur)
     {    
-        balance = balance * 0.0134;
+        balanceConv = balanceConv * 0.0134;
     }
     if (curr == gbp)
     {
-        balance = balance * 0.0113;
+        balanceConv = balanceConv * 0.0113;
     }
     Console.ForegroundColor = ConsoleColor.Green;
-    Console.WriteLine($"У вас будет " + balance + " " + curr);
+    Console.WriteLine($"У вас будет " + balanceConv + " " + curr);
     Console.ResetColor();
 
-    
+
+
 
 void WroneCommand (string? unCorrect)
 {
