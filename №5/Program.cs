@@ -5,26 +5,41 @@
 */
 
 Console.Write("Введите длинну массива: ");
-int[] array = new int[5];
-Array.Resize(ref array, array.Length+1);
-array[array.Length-1] = 8;
+int[] array = new int[Convert.ToInt32(Console.ReadLine())];
 
-Console.WriteLine(array.Length);
-/*
-int[] AddToArray(int[] mass)
-        {
-            Array.Resize(ref mass, mass.Length+1);
-            mass[mass.Length-1] = 8;
-        }
+AddToArray(array);
+Console.WriteLine($"Длинна массива " + (array.Length+1));
 
+Console.Write("Введите индекс массива который хотите удалить: ");
+int remove = Convert.ToInt32(Console.ReadLine());
 
-void MakeArray (int[] meaning)
+RemoveFromArray(ref array, remove);
+Console.WriteLine($"Длинна массива " + (array.Length+1) + " удалился индекс " + remove );
+
+void AddToArray(int[] array)//метод увилечения массива, и значение каждому индексу
 {
+    Array.Resize(ref array, array.Length+1);//увеличиваем длинну массива
     for ( int i = 0;i < array.Length;i++)
     {
-        Console.Write("Введите длинну массива: ");
-        meaning = new int[Convert.ToInt32(Console.ReadLine())];
-        Console.WriteLine("Введите значение массива: ");
-        meaning[i] = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine($"Дайте значение " + i + " индексу");
+        array[i] = Convert.ToInt32(Console.ReadLine());// придаём значение числовому массиву
+        Console.WriteLine($"Знчение " + i + " индекса = " + array[i]);
     }
-}*/
+}
+
+void RemoveFromArray(ref int[] array, int index)// удаление из массива указанного индекса
+{
+    int[] newArray = new int[array.Length - 1];
+    
+    for ( int i = 0; i < index; i++ )
+    {
+        newArray[i] = array[i];
+    }
+    for ( int i = index + 1; i < array.Length; i++)
+    {
+        newArray[i - 1] = array[i]; 
+    } 
+}
+
+
+
