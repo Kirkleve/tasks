@@ -14,7 +14,8 @@ Console.Write("Введите индекс массива который хот�
 int remove = Convert.ToInt32(Console.ReadLine());
 
 RemoveFromArray(ref array, remove);
-Console.WriteLine($"Длинна массива " + (array.Length+1) + " удалился индекс " + remove );
+Console.WriteLine($"Длинна массива " + (array.Length+1) + " удалился индекс " + remove);
+
 
 void AddToArray(int[] array)//метод увилечения массива, и значение каждому индексу
 {
